@@ -73,7 +73,6 @@ def get_dataloaders(train_subset, val_dataset, batch_size=32):
     return dataloaders, dataset_sizes
 
 def freeze_all_but_last_3_layers_and_head(model):
-    # model is a timm ViT model (e.g., vit_tiny_patch16_224)
     # Freeze all parameters first
     for param in model.parameters():
         param.requires_grad = False
